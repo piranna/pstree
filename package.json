@@ -1,0 +1,31 @@
+{
+  "name": "pstree",
+  "version": "0.0.0",
+  "description": "pstree command written in Node.js",
+  "main": "index.js",
+  "bin": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piranna/pstree.git"
+  },
+  "keywords": [
+    "ps",
+    "pstree",
+    "proc",
+    "process"
+  ],
+  "author": "Jesús Leganés Combarro 'piranna' <piranna@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/piranna/pstree/issues"
+  },
+  "homepage": "https://github.com/piranna/pstree#readme",
+  "dependencies": {
+    "archy": "^1.0.0",
+    "async": "^1.5.2",
+    "scanf": "piranna/node-scanf"
+  }
+}
