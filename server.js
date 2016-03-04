@@ -2,7 +2,7 @@
 
 var archy = require('archy')
 
-var pstree = require('./index')
+var pstree = require('./lib')
 
 
 function pstree2archy(data)
