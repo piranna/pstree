@@ -1,6 +1,6 @@
 {
   "name": "pstree",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "pstree command written in Node.js",
   "main": "lib",
   "bin": "server.js",
