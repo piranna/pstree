@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 // Dependencies
-var archy = require('archy')
-
-var pstree = require('./lib')
+const archy = require('archy')
+const pstree = require('./lib')
 
 /**
  * Convert pstree data to display it with archy
  * @see     https://www.npmjs.com/package/archy
+ * @access  private
  * @param   {Object} data `data` should be a tree of nested objects with
  *                        'label' and 'nodes' fields. 'label' is a string of
  *                        text to display at a node level and 'nodes' is an
@@ -19,9 +19,9 @@ function pstree2archy(data)
 {
   return Object.keys(data).map(function(pid)
   {
-    var process = data[pid]
+    let process = data[pid]
 
-    var result =
+    let result =
     {
       label: process.comm,
       nodes: pstree2archy(process.childs)
