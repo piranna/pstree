@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+'use strict'
+
 // Dependencies
 const archy = require('archy')
 const pstree = require('./lib')
