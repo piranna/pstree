@@ -1,17 +1,29 @@
 #!/usr/bin/env node
 
-var archy = require('archy')
+'use strict'
 
-var pstree = require('./lib')
+// Dependencies
+const archy = require('archy')
+const pstree = require('./lib')
 
-
+/**
+ * Convert pstree data to display it with archy
+ * @see     https://www.npmjs.com/package/archy
+ * @access  private
+ * @param   {Object} data `data` should be a tree of nested objects with
+ *                        'label' and 'nodes' fields. 'label' is a string of
+ *                        text to display at a node level and 'nodes' is an
+ *                        array of the descendents of the current node.
+ * @returns {Object}      Return a string representation of obj with unicode
+ *                        pipe characters like how npm ls looks.
+ */
 function pstree2archy(data)
 {
   return Object.keys(data).map(function(pid)
   {
-    var process = data[pid]
+    let process = data[pid]
 
-    var result =
+    let result =
     {
       label: process.comm,
       nodes: pstree2archy(process.childs)
@@ -21,11 +33,12 @@ function pstree2archy(data)
   })
 }
 
-
+// calls pstree function to get a process list
 pstree(function(error, result)
 {
   if(error) throw error
 
+  // converts the process list to archy
   pstree2archy(result).forEach(function(tree)
   {
     console.log(archy(tree))
