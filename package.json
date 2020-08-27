@@ -25,7 +25,6 @@
   "homepage": "https://github.com/piranna/pstree#readme",
   "dependencies": {
     "archy": "^1.0.0",
-    "async": "^2.0.1",
     "scanf": "^0.7.2"
   }
 }
